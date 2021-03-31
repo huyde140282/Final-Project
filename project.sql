@@ -27,7 +27,7 @@ create table Booking(booking_id int identity primary key not null,
 service_id nvarchar(50) foreign key references Service(service_id),
 account_id int foreign key references Account(account_id)  ,
 room_id nvarchar(50) foreign key references Room(room_id),
-startdate date not null, enddate date not null)
+startdate date not null, enddate date )
 go
 create table Book_Service(book_ser_id int identity primary key,booking_id int foreign key references Booking(booking_id),service_id nvarchar(50) foreign key references Service(service_id),quantity int) 
 --create  table Account_Service(id int identity primary key,account_id int foreign key references Account(account_id), service_id nvarchar(50) foreign key references Service(service_id),usedate date not null)
