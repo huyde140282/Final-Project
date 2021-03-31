@@ -11,9 +11,9 @@ create table Account_Roles(role_id int not null foreign key references Roles(rol
 go
 create table Service_Category(category_id nvarchar(50) primary key not null, category_name nvarchar(50))
 go
-create table Service(service_id nvarchar(50) primary key not null,
+create table Service(service_id nvarchar(50) primary key not null,image nvarchar(50),
 category_id nvarchar(50) foreign key references Service_Category(category_id),
-service_name nvarchar(50) not null,price float,quantity int,description nvarchar(500))
+service_name nvarchar(50) not null,price float,description nvarchar(500))
 go
 create table RoomCategory(categoryroomid nvarchar(50) primary key not null,
 categoryname nvarchar(50) not null,price money not null)
@@ -29,27 +29,10 @@ account_id int foreign key references Account(account_id)  ,
 room_id nvarchar(50) foreign key references Room(room_id),
 startdate date not null, enddate date not null)
 go
-create table Book_Service(book_ser_id int identity primary key,booking_id int foreign key references Booking(booking_id),service_id nvarchar(50) foreign key references Service(service_id)) 
+create table Book_Service(book_ser_id int identity primary key,booking_id int foreign key references Booking(booking_id),service_id nvarchar(50) foreign key references Service(service_id),quantity int) 
 --create  table Account_Service(id int identity primary key,account_id int foreign key references Account(account_id), service_id nvarchar(50) foreign key references Service(service_id),usedate date not null)
 --create table Customer(customer_id nvarchar(50) primary key,customer_name nvarchar(50) not null,)
--------check 2
-
-go
-insert into Roles values ('1','admin'),('2','customer')
-go
-insert into Account values('Thong','admin','2000-03-02','admin','123456789','123456789','admin@gmail.com','1')
-go
-insert into Service_Category values ('1','cocacola'),('2','7up')
-go
-insert into Service values ('ser1','1','Drink',7000,3,'Done')
-go
-insert into RoomCategory values ('cate1','Single',20000)
-go
-insert into Room values ('room1','cate1','101',5,'checked in',500000,'Luxury Room')
-go
-insert into Booking values ('ser1',1,'room1',GETDATE(),GETDATE())
-go 
-insert into Book_Service values(4,'ser1')
+-------check 
 
 select * from Roles
 select * from Account
