@@ -1,11 +1,13 @@
-﻿create database Checker
+create database Checker
 go
 use Checker
 go
-create table Roles(role_id nvarchar(50) not null primary key,role_name nvarchar(50) )
+create table Roles(role_id int identity primary key,role_name nvarchar(50) not null )
+go 
+create table Account (account_id int identity primary key,customer_name nvarchar(50) not null,username  nvarchar(50) unique not null ,
+birthdate date ,password nvarchar(50) not null,idenity_number nvarchar(50) unique not null,phone_number nvarchar(50),email nvarchar(50)not null)
 go
-create table Account (account_id int identity primary key,customer_name nvarchar(50) not null,username nvarchar(50) not null ,
-birthdate date not null,password nvarchar(50) not null,idenity_number nvarchar(50),phone_number nvarchar(50),email nvarchar(50),role_id nvarchar(50) foreign key references Roles(role_id))
+create table Account_Roles(role_id int not null foreign key references Roles(role_id), account_id int foreign key references Account (account_id) not null, primary key(role_id,account_id))
 go
 create table Service_Category(category_id nvarchar(50) primary key not null, category_name nvarchar(50))
 go
@@ -19,7 +21,7 @@ go
 create table Room(room_id nvarchar(50) primary key not null, 
 categoryroomid nvarchar(50) foreign key references RoomCategory(categoryroomid),
 room_number nvarchar(10) not null,capacity int,status nvarchar(20) ,price money,
-description nvarchar(500),constraint chk_room check (status = 'booked' and status = 'checked' and status = 'checked out'))	 
+description nvarchar(500),constraint chk_room check (status = 'booked' and status = 'checked' or status = 'checked out'))	 
 go
 create table Booking(booking_id int identity primary key not null,
 service_id nvarchar(50) foreign key references Service(service_id),
