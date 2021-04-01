@@ -3,6 +3,7 @@ function loadRoomlist(id) {
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
+<<<<<<< HEAD
         $('#child').load("roomlistView.html #load", function() {
             $('#extable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
@@ -47,17 +48,38 @@ function loadBooked(id) {
                     });
                 } else {
                     checkbox.each(function() {
+=======
+        $('#child').load("roomlistView.html #load", function () {
+            $('#extable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function () {
+                if (this.checked) {
+                    checkbox.each(function () {
+                        this.checked = true;
+                    });
+                }
+                else {
+                    checkbox.each(function () {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
                         this.checked = false;
                     });
                 }
             });
+<<<<<<< HEAD
             checkbox.click(function() {
+=======
+            checkbox.click(function () {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
             });
         });
     }, 500);
+<<<<<<< HEAD
 }
 
 function loadCheckin(id) {
@@ -88,6 +110,9 @@ function loadCheckin(id) {
             });
         });
     }, 500);
+=======
+
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
 }
 
 function loadCheckout(id) {
@@ -95,23 +120,96 @@ function loadCheckout(id) {
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
+<<<<<<< HEAD
         $('#child').load("checkoutView.html #load", function() {
             $('#checkoutTable').DataTable();
         });
     }, 500);
 }
 
+=======
+        $('#child').load("bookedView.html #load", function () {
+            $('#bookedTable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function () {
+                if (this.checked) {
+                    checkbox.each(function () {
+                        this.checked = true;
+                    });
+                }
+                else {
+                    checkbox.each(function () {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function () {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+        });
+    }, 500);
+}
+function loadCheckin(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<h1>Loading...</h1>';
+    setTimeout(() => {
+        child.innerHTML = '<h1>Success...</h1>';
+        $('#child').load("checkinView.html #load", function () {
+            $('#checkinTable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function () {
+                if (this.checked) {
+                    checkbox.each(function () {
+                        this.checked = true;
+                    });
+                }
+                else {
+                    checkbox.each(function () {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function () {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+        });
+    }, 500);
+}
+function loadCheckout(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<h1>Loading...</h1>';
+    setTimeout(() => {
+        child.innerHTML = '<h1>Success...</h1>';
+        $('#child').load("checkoutView.html #load", function () {
+            $('#checkoutTable').DataTable();
+        });
+    }, 500);
+}
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
 function loadService(id) {
     var child = document.getElementById("child");
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
+<<<<<<< HEAD
         $('#child').load("serviceView.html #load", function() {
+=======
+        $('#child').load("serviceView.html #load", function () {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
             $('#serviceTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
 
             // Select/Deselect checkboxes
             var checkbox = $('table tbody input[type="checkbox"]');
+<<<<<<< HEAD
             $("#selectAll").click(function() {
                 if (this.checked) {
                     checkbox.each(function() {
@@ -119,11 +217,25 @@ function loadService(id) {
                     });
                 } else {
                     checkbox.each(function() {
+=======
+            $("#selectAll").click(function () {
+                if (this.checked) {
+                    checkbox.each(function () {
+                        this.checked = true;
+                    });
+                }
+                else {
+                    checkbox.each(function () {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
                         this.checked = false;
                     });
                 }
             });
+<<<<<<< HEAD
             checkbox.click(function() {
+=======
+            checkbox.click(function () {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
@@ -132,11 +244,18 @@ function loadService(id) {
         });
     }, 500);
 }
+<<<<<<< HEAD
 
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
+=======
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
             $('#blah')
                 .attr('src', e.target.result)
                 .width(150)
@@ -178,17 +297,30 @@ function loadRoomcategory(id) {
 //     }, 500);
 // }
 
+<<<<<<< HEAD
 $(document).ready(function() {
     $.validator.addMethod("regex", function(value, element, regularExpression) {
+=======
+$(document).ready(function () {
+    $.validator.addMethod("regex", function (value, element, regularExpression) {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
         var re = new RegExp(regularExpression);
         return this.optional(element) || re.test(value);
     }, "Please follow the true format");
 
+<<<<<<< HEAD
     $.validator.addMethod("greaterThan", function(value, element, greater) {
         return value >= greater;
     });
 
     $.validator.addMethod("lesserThan", function(value, element, lesser) {
+=======
+    $.validator.addMethod("greaterThan", function (value, element, greater) {
+        return value >= greater;
+    });
+
+    $.validator.addMethod("lesserThan", function (value, element, lesser) {
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
         return value <= lesser;
     });
 
@@ -224,7 +356,11 @@ $(document).ready(function() {
             },
             roomPrice: {
                 regex: "Only number",
+<<<<<<< HEAD
                 greaterTham: "At least 1000 dong",
+=======
+                greaterThan: "At least 1000 dong",
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
             }
         }
     });
@@ -261,8 +397,123 @@ $(document).ready(function() {
             },
             roomPrice: {
                 regex: "Only number",
+<<<<<<< HEAD
                 greaterTham: "At least 1000 dong",
             }
         }
     });
+=======
+                greaterThan: "At least 1000 dong",
+            }
+        }
+    });
+
+    $.validator.addMethod('dateBefore', function (value, element, params) {
+        // if end date is valid, validate it as well
+        var end = $(params);
+        if (!end.data('validation.running')) {
+            $(element).data('validation.running', true);
+            setTimeout($.proxy(
+
+            function () {
+                this.element(end);
+            }, this), 0);
+            // Ensure clearing the 'flag' happens after the validation of 'end' to prevent endless looping
+            setTimeout(function () {
+                $(element).data('validation.running', false);
+            }, 0);
+        }
+        return this.optional(element) || this.optional(end[0]) || new Date(value) < new Date(end.val());
+
+    }, 'Must be before corresponding end date');
+
+    $.validator.addMethod('dateAfter', function (value, element, params) {
+        // if start date is valid, validate it as well
+        var start = $(params);
+        if (!start.data('validation.running')) {
+            $(element).data('validation.running', true);
+            setTimeout($.proxy(
+
+            function () {
+                this.element(start);
+            }, this), 0);
+            setTimeout(function () {
+                $(element).data('validation.running', false);
+            }, 0);
+        }
+        return this.optional(element) || this.optional(start[0]) || new Date(value) > new Date($(params).val());
+
+    }, 'Must be after corresponding start date');
+
+    $('#add-booking').validate({
+        rules: {
+            checkInName: {
+                required: true,
+                regex: 
+                /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/
+            },
+            checkInContact: {
+                required: true, 
+                regex: /^[0-9]{9}$/,
+            },
+            checkInStart: {
+                required: true,
+                dateBefore: '#Check-In-DateBoooking'
+            },
+            checkInEnd: {
+                required: true,
+                dateAfter: '#Check-Out-DateBooking'
+            },
+            checkInDayStay: {
+                greaterThan: 1,
+                required: true,
+            }
+        },
+        messages: {
+            checkInName: {
+                regex: "Only characters"
+            },
+            checkInContact: {
+                regex: "Only number and 9 digits"
+            },
+            checkInDayStay: {
+                greaterThan: "At least "
+            }
+        }
+    });
+
+    $('#add-service').validate({
+        rules: {
+            serviceName: {
+                required: true,
+                regex: /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/
+            },
+            categoryName: {
+                required: true, 
+                regex: /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/
+            },
+            image: {
+                required: true,
+            },
+            servicePrice: {
+                regex: /^[0-9]+$/,
+                greaterThan: 1000,
+                required: true,
+            }
+        },
+        messages: {
+            serviceName: {
+                regex: "Only character",
+            },
+            categoryName: {
+                regex: "Only character"
+            },
+            servicePrice: {
+                regex: "Only number",
+                greaterThan: "At least 1000 dong"
+            }
+            
+        }
+    });
+>>>>>>> cd178d2ae218757edee3faedaea87cc95cc3633f
 });
