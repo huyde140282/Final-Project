@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="../css/datatable.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/datatable.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/home.js"></script>
+    <!-- <script src="../js/jquery-3.5.1.min.js"></script> -->
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/datatable.min.js"></script>
+    <script src="../js/home.js"></script>   
     <link rel="stylesheet" href="../css/datatablecrudView.css">
 </head>
 
@@ -251,7 +256,7 @@
     <div id="addRoom" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form id="add-room" method="GET" action="#" modalAttribute="roomAttribute">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Room</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -259,23 +264,26 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Room Number</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomNumber">
                         </div>
                         <div class="form-group">
                             <label>Capacity</label>
-                            <input type="email" class="form-control" required>
+                            <input type="text" class="form-control" name="roomCapacity">
                         </div>
                         <div class="form-group">
                             <label>Status</label>
-                            <textarea class="form-control" required></textarea>
+                            <select class="form-control" name="roomStatus">
+                                <option>Available</option>
+                                <option>Ordered</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Price</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomPrice">
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomDescription">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -330,7 +338,7 @@
     <div id="editRoom" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form id="edit-room" method="POST" action="/editRoom" modalAttribute="roomAttribute"> <!-- Spring -->
                     <div class="modal-header">
                         <h4 class="modal-title">Edit Room</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -338,23 +346,26 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Room Number</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomNumber">
                         </div>
                         <div class="form-group">
                             <label>Capacity</label>
-                            <input type="email" class="form-control" required>
+                            <input type="text" class="form-control" name="roomCapacity">
                         </div>
                         <div class="form-group">
                             <label>Status</label>
-                            <textarea class="form-control" required></textarea>
+                            <select class="form-control" name="roomStatus">
+                                <option>Available</option>
+                                <option>Ordered</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Price</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomPrice">
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="roomDescription">
                         </div>
                     </div>
                     <div class="modal-footer">

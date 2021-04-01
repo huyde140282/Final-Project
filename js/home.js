@@ -177,3 +177,92 @@ function loadRoomcategory(id) {
 //         $('#child').load("loaduserView.html #load");
 //     }, 500);
 // }
+
+$(document).ready(function () {
+    $.validator.addMethod("regex", function (value, element, regularExpression) {
+        var re = new RegExp(regularExpression);
+        return this.optional(element) || re.test(value);
+    }, "Please follow the true format");
+
+    $.validator.addMethod("greaterThan", function (value, element, greater) {
+        return value >= greater;
+    });
+
+    $.validator.addMethod("lesserThan", function (value, element, lesser) {
+        return value <= lesser;
+    });
+
+    $('#edit-room').validate({
+        rules: {
+            roomNumber: {
+                regex: /^(A|B|C)[0-9]{4}$/,
+                required: true, 
+            },
+            roomCapacity: {
+                regex: /^[0-9]$/,
+                greaterThan: 1,
+                lesserThan: 4,               
+                required:true,
+            },
+            roomStatus: {
+                required: true,
+            },
+            roomPrice: {
+                regex: /^[0-9]+$/,
+                greaterThan: 1000,
+                required:true,
+            }
+        },
+        messages: {
+            roomNumber: {
+                regex: "Wrong format",
+            },
+            roomCapacity: {
+                greaterThan: "At least 1 guest",
+                lesserThan: "At max 4 guests",
+                regex: "Only number",
+            },
+            roomPrice: {
+                regex: "Only number",
+                greaterTham: "At least 1000 dong",
+            }
+        }
+    });
+
+    $('#add-room').validate({
+        rules: {
+            roomNumber: {
+                regex: /^(A|B|C)[0-9]{4}$/,
+                required: true, 
+            },
+            roomCapacity: {
+                regex: /^[0-9]$/,
+                greaterThan: 1,
+                lesserThan: 4,               
+                required:true,
+            },
+            roomStatus: {
+                required: true,
+            },
+            roomPrice: {
+                regex: /^[0-9]+$/,
+                greaterThan: 1000,
+                required:true,
+            }
+        },
+        messages: {
+            roomNumber: {
+                regex: "Wrong format",
+            },
+            roomCapacity: {
+                greaterThan: "At least 1 guest",
+                lesserThan: "At max 4 guests",
+                regex: "Only number",
+            },
+            roomPrice: {
+                regex: "Only number",
+                greaterTham: "At least 1000 dong",
+            }
+        }
+    });
+});
