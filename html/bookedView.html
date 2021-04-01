@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+    <div class="container" id="load">
+        <div class="table-wrapper w-75 mx-auto">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Booking</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addCheckin" class="btn btn-success" data-toggle="modal"><i
+                                class="material-icons">&#xE147;</i> <span>Add New Check-In</span></a>
+                        <a href="#deleteCheckin" class="btn btn-danger" data-toggle="modal"><i
+                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                    </div>
+                </div>
+            </div>
+            <table id="bookedTable" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>Category</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+                        <td>Single Room</td>
+                        <td>101</td>
+                        <td>
+                            <div class="text-center" style="background-color: chartreuse;">Available</div>
+                        </td>
+                        <td>
+                            <a type="button" href="#addBooking" class="btn btn-primary" style="color:white; background-color: rgb(235, 109, 63); border:rgb(235, 109, 63) ;" data-toggle="modal">Booked</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
