@@ -101,6 +101,50 @@ function loadCheckout(id) {
         });
     }, 500);
 }
+function loadService(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<h1>Loading...</h1>';
+    setTimeout(() => {
+        child.innerHTML = '<h1>Success...</h1>';
+        $('#child').load("serviceView.html #load", function () {
+            $('#serviceTable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function () {
+                if (this.checked) {
+                    checkbox.each(function () {
+                        this.checked = true;
+                    });
+                }
+                else {
+                    checkbox.each(function () {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function () {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+
+        });
+    }, 500);
+}
+function readURL(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+    $('#blah')
+    .attr('src', e.target.result)
+    .width(150)
+    .height(200);
+    };
+    reader.readAsDataURL(input.files[0]);
+    }
+    }
 // function loadService(id) {
 //     var child = document.getElementById("child");
 //     child.innerHTML = '<h1>Loading...</h1>';
