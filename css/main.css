@@ -1,6 +1,42 @@
 a {
     color: #B39959;
 }
+#serviceTable_wrapper
+{
+    overflow: hidden;
+}
+@media only screen and (max-width: 900px) {
+    #serviceTable_wrapper
+{
+    overflow: scroll;
+}}
+#extable_wrapper
+{
+    overflow: hidden;
+}
+@media only screen and (max-width: 1000px) {
+    #extable_wrapper
+{
+    overflow: scroll;
+}
+}
+.table-wrapper
+{
+    overflow: hidden;
+}
+@media only screen and (max-width: 1000px) {
+    .table-wrapper
+{
+    overflow: scroll;
+}}
+#child{
+    overflow: hidden;
+}
+@media only screen and (max-width: 1000px) {
+    #child
+{
+    overflow: scroll;
+}}
 /* fallback */
 @font-face {
     font-family: 'Material Icons';
@@ -24,6 +60,7 @@ a {
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
+ # 
   /* cyrillic-ext */
 @font-face {
     font-family: 'Roboto';
