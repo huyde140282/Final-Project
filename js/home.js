@@ -3,25 +3,24 @@ function loadRoomlist(id) {
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("roomlistView.html #load", function () {
+        $('#child').load("roomlistView.html #load", function() {
             $('#extable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
 
             // Select/Deselect checkboxes
             var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function () {
+            $("#selectAll").click(function() {
                 if (this.checked) {
-                    checkbox.each(function () {
+                    checkbox.each(function() {
                         this.checked = true;
                     });
-                }
-                else {
-                    checkbox.each(function () {
+                } else {
+                    checkbox.each(function() {
                         this.checked = false;
                     });
                 }
             });
-            checkbox.click(function () {
+            checkbox.click(function() {
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
@@ -36,24 +35,23 @@ function loadBooked(id) {
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("bookedView.html #load", function () {
+        $('#child').load("bookedView.html #load", function() {
             $('#bookedTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
             // Select/Deselect checkboxes
             var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function () {
+            $("#selectAll").click(function() {
                 if (this.checked) {
-                    checkbox.each(function () {
+                    checkbox.each(function() {
                         this.checked = true;
                     });
-                }
-                else {
-                    checkbox.each(function () {
+                } else {
+                    checkbox.each(function() {
                         this.checked = false;
                     });
                 }
             });
-            checkbox.click(function () {
+            checkbox.click(function() {
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
@@ -61,29 +59,29 @@ function loadBooked(id) {
         });
     }, 500);
 }
+
 function loadCheckin(id) {
     var child = document.getElementById("child");
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("checkinView.html #load", function () {
+        $('#child').load("checkinView.html #load", function() {
             $('#checkinTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
             // Select/Deselect checkboxes
             var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function () {
+            $("#selectAll").click(function() {
                 if (this.checked) {
-                    checkbox.each(function () {
+                    checkbox.each(function() {
                         this.checked = true;
                     });
-                }
-                else {
-                    checkbox.each(function () {
+                } else {
+                    checkbox.each(function() {
                         this.checked = false;
                     });
                 }
             });
-            checkbox.click(function () {
+            checkbox.click(function() {
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
@@ -91,40 +89,41 @@ function loadCheckin(id) {
         });
     }, 500);
 }
+
 function loadCheckout(id) {
     var child = document.getElementById("child");
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("checkoutView.html #load", function () {
+        $('#child').load("checkoutView.html #load", function() {
             $('#checkoutTable').DataTable();
         });
     }, 500);
 }
+
 function loadService(id) {
     var child = document.getElementById("child");
     child.innerHTML = '<h1>Loading...</h1>';
     setTimeout(() => {
         child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("serviceView.html #load", function () {
+        $('#child').load("serviceView.html #load", function() {
             $('#serviceTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
 
             // Select/Deselect checkboxes
             var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function () {
+            $("#selectAll").click(function() {
                 if (this.checked) {
-                    checkbox.each(function () {
+                    checkbox.each(function() {
                         this.checked = true;
                     });
-                }
-                else {
-                    checkbox.each(function () {
+                } else {
+                    checkbox.each(function() {
                         this.checked = false;
                     });
                 }
             });
-            checkbox.click(function () {
+            checkbox.click(function() {
                 if (!this.checked) {
                     $("#selectAll").prop("checked", false);
                 }
@@ -133,18 +132,19 @@ function loadService(id) {
         });
     }, 500);
 }
+
 function readURL(input) {
     if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-    $('#blah')
-    .attr('src', e.target.result)
-    .width(150)
-    .height(200);
-    };
-    reader.readAsDataURL(input.files[0]);
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(150)
+                .height(200);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
-    }
+}
 // function loadService(id) {
 //     var child = document.getElementById("child");
 //     child.innerHTML = '<h1>Loading...</h1>';
@@ -178,17 +178,17 @@ function loadRoomcategory(id) {
 //     }, 500);
 // }
 
-$(document).ready(function () {
-    $.validator.addMethod("regex", function (value, element, regularExpression) {
+$(document).ready(function() {
+    $.validator.addMethod("regex", function(value, element, regularExpression) {
         var re = new RegExp(regularExpression);
         return this.optional(element) || re.test(value);
     }, "Please follow the true format");
 
-    $.validator.addMethod("greaterThan", function (value, element, greater) {
+    $.validator.addMethod("greaterThan", function(value, element, greater) {
         return value >= greater;
     });
 
-    $.validator.addMethod("lesserThan", function (value, element, lesser) {
+    $.validator.addMethod("lesserThan", function(value, element, lesser) {
         return value <= lesser;
     });
 
@@ -196,13 +196,13 @@ $(document).ready(function () {
         rules: {
             roomNumber: {
                 regex: /^(A|B|C)[0-9]{4}$/,
-                required: true, 
+                required: true,
             },
             roomCapacity: {
                 regex: /^[0-9]$/,
                 greaterThan: 1,
-                lesserThan: 4,               
-                required:true,
+                lesserThan: 4,
+                required: true,
             },
             roomStatus: {
                 required: true,
@@ -210,7 +210,7 @@ $(document).ready(function () {
             roomPrice: {
                 regex: /^[0-9]+$/,
                 greaterThan: 1000,
-                required:true,
+                required: true,
             }
         },
         messages: {
@@ -233,13 +233,13 @@ $(document).ready(function () {
         rules: {
             roomNumber: {
                 regex: /^(A|B|C)[0-9]{4}$/,
-                required: true, 
+                required: true,
             },
             roomCapacity: {
                 regex: /^[0-9]$/,
                 greaterThan: 1,
-                lesserThan: 4,               
-                required:true,
+                lesserThan: 4,
+                required: true,
             },
             roomStatus: {
                 required: true,
@@ -247,7 +247,7 @@ $(document).ready(function () {
             roomPrice: {
                 regex: /^[0-9]+$/,
                 greaterThan: 1000,
-                required:true,
+                required: true,
             }
         },
         messages: {
