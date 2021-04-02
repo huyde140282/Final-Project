@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="../css/datatable.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/datatable.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
@@ -20,11 +18,12 @@
 
 <body style="min-height: 100vh;">
     <div class="container-fluid d-flex justify-content-between align-content-center" style="background-color: #4E2728; height: 50px; border-bottom: 1px solid #c2a55b;">
-        <div class="d-flex flex-rơ">
-            <img style="margin-right: 0;" class="navbar-brand" src="../image/d.png" alt="D" width="30px" height="47px">
-            <a class="navbar-brand" id="namehotel" href="#" style="color: #c2a55b; margin-top: 0.2%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">reaming        
-                <img class="position-absolute" src="../image/h.png" alt="H" width="33px" height="33px">
-                <span style="margin-left: 27%;">otel</span></a>
+        <div class="d-flex name">
+            <!-- <img class="mt-1 mr-1" src="../image/dragon.png" alt="dragon" width="43px" height="43px"> -->
+            <img style="margin-right: 3px; margin-bottom: 5px;" class="navbar-brand" src="../image/d.png" alt="D" width="30px" height="47px">
+            <a class="navbar-brand m-0 mt-1" id="namehotel" href="#">ragon</a>
+            <img class="ml-1 mt-2" src="../image/h.png" alt="H" width="38px" height="34px">
+            <a class="navbar-brand mt-1">otel</a>
         </div>
         <button id="profile-btn" class="fas fa-hotel nav-link profile" role="button" data-toggle="dropdown"></button>
         <div class="dropdown-menu border" style="background-color: #4E2728; ">
@@ -38,38 +37,43 @@
             <div class="d-flex my-3 menu-item">
                 <span><i class="fa fa-home mt-1 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a href="#" role="button" id="home"> Home</a>
+                <a href="#" role="button" id="home" name="home"> Home</a>
+            </div>
+            <div class="d-flex my-3 menu-item">
+                <span><i class="fas fa-list mt-1 mr-2" aria-hidden="true"
+                        style="font-size: 110%; width: fit-content;"></i></span>
+                <a role="button" id="category" name="category" href="#" onclick="loadRoomcategory(this.id)">Room Category</a>
             </div>
             <div class="d-flex my-3 menu-item">
                 <span><i class="fas fa-bed mt-1 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="roomlist" href="#" onclick="loadRoomlist(this.id)">Rooms List</a>
+                <a role="button" id="roomlist" name="roomlist" href="#" onclick="loadRoomlist(this.id)">Rooms List</a>
             </div>
             <div class="d-flex my-3 menu-item">
                 <span><i class="fa fa-book mt-10 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="booked" href="#" onclick="loadBooked(this.id)">Booking</a>
+                <a role="button" id="booking" name="booking" href="#" onclick="loadBooked(this.id)">Booking</a>
             </div>
 
             <div class="d-flex my-3 menu-item">
                 <span><i class="fas fa-sign-in-alt mt-10 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="checkin" href="#" onclick="loadCheckin(this.id)">Check in</a>
+                <a role="button" id="checkin" name="checkin" href="#" onclick="loadCheckin(this.id)">Check in</a>
             </div>
             <div class="d-flex my-3 menu-item">
                 <span><i class="fas fa-sign-out-alt mt-10 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="checkout" href="#" onclick="loadCheckout(this.id)">Check out</a>
+                <a role="button" id="checkout" name="checkout" href="#" onclick="loadCheckout(this.id)">Check out</a>
             </div>
             <div class="d-flex my-3 menu-item">
                 <span><i class="fas fa-concierge-bell mt-10 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="service" href="#" onclick="loadService(this.id)">Service</a>
+                <a role="button" id="service" name="service" href="#" onclick="loadService(this.id)">Service</a>
             </div>
             <div class="d-flex my-3 menu-item">
-                <span><i class="fas fa-list mt-1 mr-2" aria-hidden="true"
+                <span><i class="fas fa-file-invoice mt-10 mr-2" aria-hidden="true"
                         style="font-size: 110%; width: fit-content;"></i></span>
-                <a role="button" id="category" href="#" onclick="loadRoomcategory(this.id)">Room Category</a>
+                <a role="button" id="reservation" name="reservation" href="#">Reservation</a>
             </div>
             <div class="d-flex my-3 menu-item">
                 <span><i class="fas fa-money-bill-alt mt-10 mr-2" aria-hidden="true"
@@ -495,155 +499,6 @@
             </div>
         </div>
 
-
-        <div class="form-group">
-            <label>Category Name</label>
-            <input type="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Image</label>
-            <input type="file" onchange="readURL(this);">
-            <img id="picture" src="#" alt="">
-        </div>
-        <div class="form-group">
-            <label>Price</label>
-            <input type="text" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Description</label>
-            <input type="text" class="form-control" required>
-        </div>
-        <div class="modal-footer">
-            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-info" value="Save">
-        </div>
-    </div>
-    </form>
-    </div>
-    </div>
-    </div>
-
-    <!-- <div id="addCheckin" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="add-checkin">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Check-In</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="checkInName">
-                        </div>
-                        <div class="form-group">
-                            <label>Contact#</label>
-                            <input type="email" class="form-control" name="checkInContact">
-                        </div>
-                        <div class="form-group">
-                            <label for="Check-In-Date">Check-In-Date:</label>
-                            <input type="date" class="form-control" id="Check-In-Date" name="Check-In-Date" name="checkInStart">
-                            <div class="form-group">
-                                <label for="Check-Out-Date">Check-Out-Date:</label>
-                                <input type="date" class="form-control" id="Check-Out-Date" name="Check-Out-Date" name="checkInEnd">
-                            </div>
-                        </div>
-                            <div class="form-group">
-                                <label>Day of Stay</label>
-                                <input type="text" class="form-control" name="checkInDayStay">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" value="Check-in">
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div>     -->
-    <!-- Delete Modal HTML -->
-
-    <!-- Add CheckIn HTML -->
-
-    <div id="addBooking" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="add-booking">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Check-In</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="checkInName">
-                        </div>
-                        <div class="form-group">
-                            <label>Contact#</label>
-                            <input type="text" class="form-control" name="checkInContact">
-                        </div>
-                        <div class="form-group">
-                            <label for="Check-In-DateBooking">Check-In-Date:</label>
-                            <input type="date" class="form-control" id="Check-In-DateBooking" name="checkInStart">
-                            <div class="form-group">
-                                <label for="Check-Out-DateBooking">Check-Out-Date:</label>
-                                <input type="date" class="form-control" id="Check-Out-DateBooking" name="checkInEnd">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Day of Stay</label>
-                            <input type="text" class="form-control" name="checkInDayStay">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Check-in">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- <div id="edit" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit Service</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Service Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Category Name</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" onchange="readURL(this);">
-                            <img id="picture"src="#" alt="">
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>   -->
-
-    <!-- AddBooking HTML -->
-    <!-- Add Booking HTML -->
 
 </body>
 
