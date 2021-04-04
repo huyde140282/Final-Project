@@ -1,8 +1,9 @@
+// BarChart
+
 function loadRoomlist(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
         $('#child').load("roomlistView.html #load", function() {
             $('#extable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
@@ -32,10 +33,9 @@ function loadRoomlist(id) {
 
 function loadBooked(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
-        $('#child').load("bookedView.html #load", function() {
+        $('#child').load("bookingView.html #load", function() {
             $('#bookedTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
             // Select/Deselect checkboxes
@@ -62,9 +62,8 @@ function loadBooked(id) {
 
 function loadCheckin(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
         $('#child').load("checkinView.html #load", function() {
             $('#checkinTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
@@ -92,9 +91,8 @@ function loadCheckin(id) {
 
 function loadCheckout(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
         $('#child').load("checkoutView.html #load", function() {
             $('#checkoutTable').DataTable();
         });
@@ -103,11 +101,72 @@ function loadCheckout(id) {
 
 function loadService(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
         $('#child').load("serviceView.html #load", function() {
             $('#serviceTable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function() {
+                if (this.checked) {
+                    checkbox.each(function() {
+                        this.checked = true;
+                    });
+                } else {
+                    checkbox.each(function() {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function() {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+
+        });
+    }, 500);
+}
+
+function loadUser(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
+    setTimeout(() => {
+        $('#child').load("userView.html #load", function() {
+            $('#userTable').DataTable();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Select/Deselect checkboxes
+            var checkbox = $('table tbody input[type="checkbox"]');
+            $("#selectAll").click(function() {
+                if (this.checked) {
+                    checkbox.each(function() {
+                        this.checked = true;
+                    });
+                } else {
+                    checkbox.each(function() {
+                        this.checked = false;
+                    });
+                }
+            });
+            checkbox.click(function() {
+                if (!this.checked) {
+                    $("#selectAll").prop("checked", false);
+                }
+            });
+
+        });
+    }, 500);
+}
+
+function loadReservation(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
+    setTimeout(() => {
+        $('#child').load("reservationView.html #load", function() {
+            $('#reserveTable').DataTable();
             $('[data-toggle="tooltip"]').tooltip();
 
             // Select/Deselect checkboxes
@@ -155,20 +214,60 @@ function readURL(input) {
 // }
 function loadRoomcategory(id) {
     var child = document.getElementById("child");
-    child.innerHTML = '<h1>Loading...</h1>';
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
     setTimeout(() => {
-        child.innerHTML = '<h1>Success...</h1>';
         $('#child').load("roomcateView.html #load");
     }, 500);
 }
-// function loadRevenue(id) {
-//     var child = document.getElementById("child");
-//     child.innerHTML = '<h1>Loading...</h1>';
-//     setTimeout(() => {
-//         child.innerHTML = '<h1>Success...</h1>';
-//         $('#child').load("revenueView.html #load");
-//     }, 500);
-// }
+
+function loadRevenue(id) {
+    var child = document.getElementById("child");
+    child.innerHTML = '<img src="../image/dragon.png " class="loading" alt="dragon" width="190px" height="190px" style ="display:block; margin: auto;">';
+    setTimeout(() => {
+        $('#child').load("revenueView.html #revenue", function() {
+            google.charts.load("current", { packages: ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ["Element", "Revenue", { role: "style" }],
+                    ["1", 894, "blue"],
+                    ["2", 10, "blue"],
+                    ["3", 1930, "blue"],
+                    ["4", 9000, "blue"],
+                    ["5", 894, "blue"],
+                    ["6", 1049, "blue"],
+                    ["7", 1930, "blue"],
+                    ["8", 9000, "blue"],
+                    ["9", 0, "blue"],
+                    ["10", 1049, "blue"],
+                    ["11", 1930, "blue"],
+                    ["12", 9000, "blue"]
+                ]);
+
+                var view = new google.visualization.DataView(data);
+                view.setColumns([0, 1,
+                    {
+                        calc: "stringify",
+                        sourceColumn: 1,
+                        type: "string",
+                        role: "annotation"
+                    },
+                    2
+                ]);
+
+                var options = {
+                    title: "Revenue By Month ($/Month) in 2021",
+                    width: 900,
+                    height: 400,
+
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                chart.draw(view, options);
+            }
+        });
+    }, 500);
+}
 // function loadUser(id) {
 //     var child = document.getElementById("child");
 //     child.innerHTML = '<h1>Loading...</h1>';

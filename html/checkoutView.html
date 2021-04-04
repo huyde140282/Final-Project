@@ -17,17 +17,11 @@
 
 <body>
     <div class="container" id="load">
-        <div class="table-wrapper w-75 mx-auto">
+        <div class="table-wrapper w-100 mx-auto">
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Manage <b>Check-Out</b></h2>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="#addCheckin" class="btn btn-success" data-toggle="modal"><i
-                                class="material-icons">&#xE147;</i> <span>Add New Check-In</span></a>
-                        <a href="#deleteCheckin" class="btn btn-danger" data-toggle="modal"><i
-                                class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                        <h2>Manage Check-Out</h2>
                     </div>
                 </div>
             </div>
@@ -47,20 +41,125 @@
                         <td class="td">101</td>
                         <td class="td">0000</td>
                         <td class="td">
-                            <div class="text-center" style="background-color: chartreuse;">Checked-in</div>
+                            <div class="text-center" style="color: rgb(6, 155, 18); font-weight:bold ;">Checked-in
+                            </div>
                         </td>
                         <td>
-                            <a type="button" href="#viewCheckout" class="btn btn-primary" style="color:white;"
-                                data-toggle="modal">View</a>
+                            <!-- <a type="button" href="#viewCheckout" class="btn btn-primary" style="color:white;"
+                                data-toggle="modal">View</a> -->
+                            <a href="#viewCheckout" class="View" data-toggle="modal"><i class="fas fa-eye ml-4"
+                                    style="color: #403678;" data-toggle="tooltip" title="View">&#xE254;</i></a>
                         </td>
                     </tr>
                 </tbody>
 
             </table>
         </div>
+
+        <!-- View Check-out HTML -->
+        <div id="viewCheckout" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header mauxin">
+                            <h4 class="modal-title">View Check-Out</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Room Number:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Room Category:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Room Price:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Service:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Check-In(Name):</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact no:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Check-In Date/Time:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Days:</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Amount(Price*Days):</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-success" value="Checkout">
+                            <a type="button" href="#editCheckout" class="btn btn-success" data-toggle="modal">Edit</a>
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Checkout HTML -->
+        <div id="editCheckout" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header mauxin">
+                            <h4 class="modal-title">View Check-Out</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Room Number:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Room Category:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Room Price:</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Service:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Check-In(Name):</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact no:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Check-In Date/Time:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Days:</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Amount(Price*Days):</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-success" value="Save">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="../js/jquery.min.js"></script>
-    <script charset="utf8" src="../js/datatable.min.js"></script>
+
 
 </body>
 

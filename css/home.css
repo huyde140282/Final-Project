@@ -42,6 +42,27 @@ menu-item {
     margin-right: 10%;
 }
 
+.active {
+    border-radius: 1em 2em 2em 1em;
+    background-color: #d4b35e;
+    width: 90%;
+    margin-left: 0%;
+    padding: 1% 5%;
+}
+
+.active a {
+    transform: scale(1.2);
+    text-decoration: none;
+    color: rgb(48, 45, 45);
+    transition: 0.5s;
+    margin-left: 1%;
+}
+
+.active i {
+    color: rgb(48, 45, 45);
+    margin-right: 10%
+}
+
 .profile:hover {
     -webkit-animation: fa-spin 0.3s normal linear;
     animation: fa-spin 0.3s normal linear;
@@ -59,9 +80,18 @@ menu-item {
     font-size: 1.1em;
 }
 
+.loading {
+    -webkit-animation: fa-spin 0.3s normal linear;
+    animation: fa-spin 0.3s normal linear;
+    background: none;
+}
+
+.table-title h2 {
+    color: #e4ac1f;
+}
+
 #child {
     width: 80%;
-    /* background-image: url('../image/background.jpg'); */
     background: linear-gradient(rgba(100, 15, 36, 0.4), rgba(100, 15, 36, 0.4)), url('../image/background.jpg');
     background-size: 10%;
     background-repeat: repeat;
@@ -87,15 +117,74 @@ menu-item {
     }
 }
 
-
-/* .table-wrapper {
+#serviceTable_wrapper {
     overflow: hidden;
 }
 
 @media only screen and (max-width: 1000px) {
-    .table-wrapper {
+    #serviceTable_wrapper {
         overflow: scroll;
     }
+}
+
+#categoryTable_wrapper {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    #categoryTable_wrapper {
+        overflow: scroll;
+    }
+}
+
+#checkoutTable_wrapper {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    #checkoutTable_wrapper {
+        overflow: scroll;
+    }
+}
+
+#checkinTable_wrapper {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    #checkinTable_wrapper {
+        overflow: scroll;
+    }
+}
+
+#checkinTable_wrapper {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    #checkinTable_wrapper {
+        overflow: scroll;
+    }
+}
+
+#reserveTable_wrapper {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    #reserveTable_wrapper {
+        overflow: scroll;
+    }
+}
+
+
+/* .table-wrapper {
+  overflow: hidden;
+}
+@media only screen and (max-width: 1000px) {
+  .table-wrapper {
+      overflow: scroll;
+  }
 } */
 
 #child {

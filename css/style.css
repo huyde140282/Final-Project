@@ -69,7 +69,6 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -2132,11 +2131,6 @@ pre code {
     }
 }
 
-::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgb(10, 10, 10);
-}
-
 .form-control:disabled,
 .form-control[readonly] {
     background-color: white;
@@ -3638,7 +3632,7 @@ input[type=button].btn-block {
     height: 0;
     margin: .5rem 0;
     overflow: hidden;
-    border-top: 1px solid #e9ecef
+    border-top: 1px solid #e9ecef;
 }
 
 .dropdown-item {
@@ -3647,7 +3641,7 @@ input[type=button].btn-block {
     padding: .25rem 1.5rem;
     clear: both;
     font-weight: 400;
-    color: #212529;
+    color: #d4b35e;
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
@@ -3656,16 +3650,16 @@ input[type=button].btn-block {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    color: #16181b;
+    background-color: #d4b35e;
+    color: rgb(105, 4, 4);
     text-decoration: none;
-    background-color: #f8f9fa
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-    color: #fff;
+    color: #2d3136;
     text-decoration: none;
-    background-color: #007bff
+    background-color: #dda71f;
 }
 
 .dropdown-item.disabled,
@@ -11038,19 +11032,27 @@ h5,
 }
 
 .form-control::-webkit-input-placeholder {
-    color: rgb(10, 10, 10);
+    color: #5A0C0F;
+    font-family: 'Gentium Book Basic', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .form-control::-moz-placeholder {
-    color: rgb(10, 10, 10);
+    color: #5A0C0F;
+    font-family: 'Gentium Book Basic', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .form-control:-ms-input-placeholder {
-    color: rgb(10, 10, 10);
+    color: #5A0C0F;
+    font-family: 'Gentium Book Basic', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .form-control:-moz-placeholder {
-    color: rgb(10, 10, 10);
+    color: #5A0C0F;
+    font-family: 'Gentium Book Basic', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .form-control:hover,

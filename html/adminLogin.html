@@ -2,66 +2,89 @@
 <html lang="en">
 
 <head>
-    <title>Login 10</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-    <script src="../JS/jquery.min.js"></script>
-    <script src="../JS/popper.min.js"></script>
-    <script src="../JS/bootstrap.min.js"></script>
-    <script src="../JS/main.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@700&family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: 'Gentium Book Basic', serif;
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
 </head>
 
-<body class="img js-fullheight min-vh-100" style="background: url(../Image/bg.jpg) no-repeat center center fixed; -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;">
+<body>
+    <div class="d-lg-flex half">
+        <div class="bg order-1 order-md-2" style="background-image: url('../image/loginBack-sm.jpg');position: relative;z-index: 1;">
+            <div class="layer">
+            </div>
+        </div>
+        <div class="contents order-2 order-md-1 d-flex align-items-center">
 
-    <section class="ftco-section h-100">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4" style="padding: 3%; background: #ecdbb1; border-radius: 1rem; opacity: 0.9;">
-                    <div class="login-wrap p-0">
-
-                        <form action="#" class="signin-form" id="signInForm">
-                            <h1 class="mb-4 text-center" style="font-family: Pristinal; color:rgb(172, 76, 76) ;font-weight: bold;">
-                                Dragon Hotel</h1>
+            <div class="m-auto h-100 w-100">
+                <div class="row align-items-center justify-content-center h-100 w-100 m-0">
+                    <div class="col-md-7 col-lg-10">
+                        <div class="text-center">
+                            <img src="../image/logo.png" alt="" width="130px" height="130px">
+                            <h4 style="color: #C8A862; font-family: 'Gentium Book Basic', serif;
+                            font-family: 'Roboto Slab', serif;">Victoria Palace</h4>
+                        </div>
+                        <form action="#" class="signin-form d-flex flex-column flex-wrap justify-content-center m-auto" id="signInForm">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username" name="username" required>
+                                <input type="text" class="form-control first" placeholder="Username" name="username" required>
                             </div>
                             <div class="form-group">
                                 <input id="password-field" type="password" class="form-control" placeholder="Password" required>
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
-                            </div>
+
                             <div class="form-group">
                                 <div class="w-100 d-flex justify-content-between">
                                     <div class="form-check" style="color: #221f1d;">
                                         <input class="form-check-input mt-2" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Remember me
-                                        </label>
+                                                Remember me
+                                            </label>
                                     </div>
                                 </div>
-                                <div class="w-50 text-md-left">
-                                    <a href="register.html" class="register" style="color: rgb(66, 62, 62); "><i
-                                            class="fas fa-user-check mr-1"></i>Create account</a>
-                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn signin">Sign In</button>
                             </div>
                         </form>
+
+                        <!-- <form action="#" method="post">
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username">
+                            </div>
+                            <div class="form-group last mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                            <div class="d-flex mb-5 align-items-center">
+                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                            </div>
+                            <input type="submit" value="Log In" class="btn btn-block">
+                        </form> -->
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
 </body>
 
 </html>

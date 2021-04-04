@@ -13,82 +13,154 @@
 </head>
 
 <body>
-    <div id="load" style="width: 100%;">
-        <h1>Room Category</h1>
-        <div class="w-100 d-flex mb-5 justify-content-between">
-            <div class="roomform d-flex flex-column justify-content-between"
-                style="border: 1px solid rgb(158, 141, 141); width: 40%;">
-                <div class="roomform-group" style="background-color: lightgray; border-bottom: lightgray;">
-                    <h4 class="ml-4 mb-2 mt-2">Room Form</h4>
-                </div>
-                </hr>
-                <h5 class="ml-4 mt-1 ">Category Room</h5>
-                <div class="roomform-group mb-3">
-                    <input type="text" class="form-control mx-auto" style="width: 90%;">
-                </div>
-                <h5 class="ml-4">Category Name</h5>
-                <div class="roomform-group btn-group mx-auto  mb-3" style="width: 90%">
-                    <button type="button" class="btn btn-danger dropdown-toggle text-right "
-                        style="background-color:white; color: black; border: 1px solid black;" data-toggle="dropdown">
-                        Action
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Deluxe Room</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+    <div class="container" id="load" style="width: 100%;">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage Category Room</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addCategoryRoom" class="btn btn-success" data-toggle="modal"><i
+                                class="material-icons">&#xE147;</i> <span>Add</span></a>
+                        <a href="#deleteCategoryRoom" class="btn btn-danger" data-toggle="modal"><i
+                                class="material-icons">&#xE15C;</i> <span>Del</span></a>
                     </div>
                 </div>
-                <h5 class="ml-4 ">Price</h5>
-                <div class="roomform-group btn-group mx-auto mb-3" style="width: 90%">
-                    <button type="button" class="btn btn-danger dropdown-toggle text-right "
-                        style="background-color:white; color: black; border: 1px solid black;" data-toggle="dropdown">
-                        Action
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Available</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-                </hr>
-                <div class="btn d-flex mt-4 justify-content-lg-center"
-                    style="border-top: 1px solid rgb(105, 91, 91); width: 100%; background-color:lightgray">
-                    <button type="button" class="btn btn-primary mr-2">Save</button>
-                    <button type="button" class="btn btn-light">Cancel</button>
-                </div>
-
             </div>
-            <div class="listcate p-4" style="width: 60%;background-color: whitesmoke;">  
-                    <table id="categorytable" class="table table-primary text-center">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>#</th>
-                                <th>Category Room</th>
-                                <th>Category Name</th>
-                                <th>Price</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>cate1</td>
-                                <td>Single</td>
-                                <td>20000.0000</td>
-                                <td>
-                                    <div class="btn d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary mr-2">Edit</button>
-                                        <button type="button" class="btn btn-danger ">Del</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                
+            <table id="categoryTable" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>Category Room</th>
+                        <th>Category Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+                        <td>cate1</td>
+                        <td>Single</td>
+                        <td>20000.0000</td>
+                        <td>
+                            <a href="#editCategoryRoom" class="edit" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteCategoryRoom" class="delete" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Edit Category Room HTML -->
+        <div id="deleteCategoryRoom" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header mauxin">
+                            <h4 class="modal-title">Delete Category Room</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete these Records?</p>
+                            <p class="text-warning"><small>This action cannot be undone. </small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" data-dismiss="modal" value="Delete">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- Edit Category Room HTML -->
+        <div id="editCategoryRoom" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="category-room" method="POST" action="/editCategoryRoom">
+                        <!-- Spring -->
+                        <div class="modal-header mauxin">
+                            <h4 class="modal-title">Room Category</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Category Room</label>
+                                <input type="text" class="form-control" name="categoryRoom" id="categoryRoom">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <select class="form-control" name="categoryName">
+                                    <option>Single Room</option>
+                                    <option>Double Room</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" name="categoryPrice" id="categoryPrice">
+                            </div>
+                        </div>
+                        <div class="mx-auto text-center mb-3">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-info" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Add Category Room HTML -->
+        <div id="addCategoryRoom" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="category-room" method="POST" action="/addCategoryRoom" modalAttribute="roomAttribute">
+                        <!-- Spring -->
+                        <div class="modal-header mauxin">
+                            <h4 class="modal-title ">Add Room Category </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Category Room</label>
+                                <input type="text" class="form-control" name="roomNumber">
+                            </div>
+                            <div class="form-group">
+                                <label>CategoryName</label>
+                                <select class="form-control" name="roomStatus">
+                                    <option>Available</option>
+                                    <option>Ordered</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <select class="form-control" name="roomStatus">
+                                    <option>Available</option>
+                                    <option>Ordered</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mx-auto text-center mb-3">
+                            <input type="submit" class="btn btn-info" value="Save">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
-<script src="../js/jquery.min.js"></script>
-<script charset="utf8" src="../js/datatable.min.js"></script>
 
 </html>
