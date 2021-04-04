@@ -177,16 +177,6 @@ menu-item {
     }
 }
 
-
-/* .table-wrapper {
-  overflow: hidden;
-}
-@media only screen and (max-width: 1000px) {
-  .table-wrapper {
-      overflow: scroll;
-  }
-} */
-
 #child {
     overflow: hidden;
 }
@@ -219,7 +209,6 @@ menu-item {
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
 
